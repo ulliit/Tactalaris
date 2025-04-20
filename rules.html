@@ -6,32 +6,37 @@
     border: 1px solid black;
     width: 20%;
 }
+@media print {
+    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+}
 </style>
 </head>
 <body style="font-family: arial;">
 
-<h1>Wing Kings</h1>
+<h1>Tactalaris</h1>
 
-<h2>Classic Vibe. New Adventures.</h2>
+<h2>A Dusty Chess Variant from the 10×10 Universe</h2>
 
-A plausible 10x10 chess version featuring an explosive alternative to the castling rule that promotes razor sharp play.
+Built from a plausible adaptation of the classical chess architecture to the 10x10 board, featuring an explosive alternative to the castling rule that promotes razor sharp play.
 
 <h3>Board</h3>
-The board is extended to 100 (10x10) squares. The files are labeled with the letters a-j, the ranks with the numbers 1-10. The lower right square of the board is black.
-<h3>The Knight Gets New Friends</h3>
-Wing Kings adds two new members to the team, the camel and the zebra. Especially the camel is known to be a very old piece which has already been used in the medieval Tamerlane Chess. Both pieces have a worth and abilities similar to the knight, but with a different set of target squares.
+The board is extended to 100 (10x10) squares. The files are labeled with the letters a-j, the ranks with the numbers 1-10. The lower right square of the board is white.
+<h3>Mounted Warriors</h3>
+Tactalaris adds two new members to the squad, the camel and the zebra. Especially the camel is known to be a very old piece which has already been used in the medieval Tamerlane Chess. Both pieces have a worth and abilities similar to the knight, but with a different set of target squares.
 <br><br>
-While the knight reaches all squares in a two square distance that cannot be reached by rook or bishop, camel & zebra have similar abilities for the squares in a three square distance. Both pieces are leapers. The camel is color-bound like the bishop, the zebra is not. The following diagram shows how they fit the picture:
+While the knight reaches all squares in a two square distance that cannot be reached by rook or bishop, camel & zebra have similar abilities for the squares in a three square distance. Both pieces are leapers. The camel is color-bound like the bishop, the zebra is not. The following diagram shows how they fit into the picture:
 <br><br>
 <img src="zcbnrcomparison.png" class="diagram">
 <br><br>
 Or in separate diagrams:
 <br><br>
-<img src="zebra.png" class="diagram">
-<br><br>
+<img src="zebra.png" class="diagram">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="camel.png" class="diagram">
 <br><br>
 This results in six complementary minor pieces, each of them targeting an exclusive set of squares that none of the other five pieces can reach.
+
+<div class="pagebreak"> </div>
+
 <h3>Pawns</h3>
 They can move up to three steps forward when placed on the initial square.
 <br><br>
@@ -41,11 +46,14 @@ One step forward when placed on the sixth rank or higher.
 <br><br>
 This means a pawn can reach the promotion field within five moves, which is the same number of moves as in classical chess:
 <br><br>
-<img src="pawnmovement.png" class="diagram">
+<img src="10xpawns.png" class="diagram">
 <br><br>
 En passant capturing is possible each time a pawn passes an enemy pawn by moving more than one square forward in one move:
 <br><br>
-<img src="ep1.png" class="diagram">
+<img src="ep.png" class="diagram">
+
+<div class="pagebreak"> </div>
+
 <h3>Setup</h3>
 
 The castling rule is replaced by the rule that kings are always start in diametrical opposition at the corners of the board.
@@ -55,8 +63,8 @@ The castling rule is replaced by the rule that kings are always start in diametr
 The remaining pieces are randomly placed. A sample:
 <br><br>
 <img src="wingkings.png" class="diagram">
-<!--br><br>
-! One special rule is added: A White camel or zebra can't make the first move. This is to prevent devastating attacks before Black had the opportunity to setup basic defenses. -->
+<br><br>
+! One special rule is added: To give Black multiple opening options for any setup, a white camel or zebra can't make the first move.
 <br><br>
 For offline play without a dice the following placement rules can be applied:
 <br><br>
@@ -72,29 +80,17 @@ Bishops & camels have to occupy different square colors (obviously). To minimize
 <br><br>
 After the the setup is complete, the game starts with White's first move.
 
-<h2>Notes</h2>
-Some background information regarding the game design. If you are a non-academic and only needed the rules, you can skip here.
-<h3>Wing Kings incorporates the following design elements:</h3>
-- Two single pieces: The key piece and the strongest piece. The latter has the same move pattern as the key piece but with unlimited range.
-<br><br>
-- Six distinct minor pieces, each of them <span style="font-weight: bold;">unique</span> in its moving abilities.
-<br><br>
-- Two rooks.
-<br><br>
-- Pieces with ambiguous routes to their destination squares (camel, knight, zebra) can move directly to these squares regardless if one or all routes are blocked.
-<br><br>
-- Pawns get slower once they pass a certain rank number.
-<br><br>
-- All pieces can be developed by moving only the two central pawns.
-<br><br>
-- Its played on a square board.
+<div class="pagebreak"> </div>
 
-<h3>Some estimations regarding the game dynamics:</h3>
+<h2>Notes</h2>
+<h3>Design</h3>
 Upvaluing the pawns by making them faster seemed necessary to keep the spirit of the original game that includes fast confrontation and a broad spectrum of possibilities for piece sacrifices.
 <br><br>
-Adding minor pieces instead of heavy ones like the two pieces that are mostly used for a 10x board - the chancellor and the archhbishop - helps keeping the subtility of the original game.
+Comparable to classical chess, three pawns roughly compensate for a minor piece, five for a rook and nine for a queen.
 <br><br>
- Interestingly, some endgame tests with Fairy Stockfish revealed that the camel might nevertheless be worth slightly more than the zebra, since it reaches on average more squares. For the same reason the knight might worth more than zebra and at least worth as much as camel. Does the average numbers of available squares beat range?
+Adding minor pieces instead of heavy ones like the two pieces that are mostly used for a 10x board - the chancellor and the archbishop - helps keeping the subtility of the original game.
+<br><br>
+In earlier versions I experimented with a 16-square leaper that combines the movements of camel and zebra. This piece would be worth about a rook and offers insane tactical resources, but test showed that it is quite hard to handle for humans and increases the number of heavy pieces over a healthy limit.
 <br><br>
 10x10 should faciliate gambits and sacrifices in general, since one pawn unit represents a lower fraction of the complete material stock.
 <br><br>
@@ -102,9 +98,9 @@ Chances for an asymmetrical material distribution - one of the most tension crea
 <br><br>
 The knight obviously suffers from longer routes on the bigger board, but controls on average more squares than in classical chess.
 <br><br>
-The king might be the only piece that is less powerful on the bigger board.
+ Interestingly, some endgame tests with Fairy Stockfish revealed that the camel might be worth slightly more than the zebra, since it reaches, on average, more squares. For the same reason the knight might worth more than zebra and at least worth as much as the camel. Does the average numbers of available squares beat range?
 <br><br>
-As a mere view on the setup suggests, Wing Kings promotes a playing style that prefers energy over matter - and goes hand in hand with a much stronger focus on the king. The audience will like it <span style="font-size: 20px">💥</span>
+The king might be the only piece that is less powerful on the bigger board.
 <br><br>
 Placing the kings in diametral opposition is a very natural alternative to the castling rule and provides its benefits - improved king safety and piece coordination - while creationg tension right from the start.
 <br><br>
@@ -114,23 +110,27 @@ This king setup also much better suited to avoid "trash positions" when shufflin
 The first move block for the White camel / zebra is introtruced to hinder White to launch immediate attacks against Black's back rank with these pieces.-->
 <h3>History</h3>
 
-Before developing a chess version for the 10x10 board, I experimented with a point symmetric setup for the 8x8 board. Engines can play this out of the box without reconfiguration. You still can find sample games on <a href="https://chess360.net">chess360.net</a>.
+Before developing a chess version for the 10x10 board, I experimented with applying the setup rules decribed above to the 8x8 board and the classical piece set. Engines can play this out of the box without reconfiguration. Albeit nearly unknown - and grossly underrated in my opinion - the 8x8 concept is not new and already described as Corner Chess or Kings Corner Chess on several correspondence chess websites.
 <br><br>
-The 8x8 version with the kings placed on h1 and a8 is described as Corner Chess or Kings Corner Chess on several websites.
+The 10x10 concept was developed by me and derived from first principles. However, some ingredients for my recipe were obviously used in other chess variants before. See the links below for some similar designs. ChessXp is an earlier attempt by me to apply the design principles of classical chess to a 10x10 board.
 <br><br>
-The big board concept was developed by me and derived from first principles. However, most elements are (obviously) not new, only the combination is. See the links below for some similar variants.
-<br><br>
-The 3, 2, 1, 1, 1 pawn movement might be a completely new approach.
+The 3, 2, 1, 1, 1 pawn movement might be a completely new approach. The piece set composition might be new as well.
 
 <h3>Links</h3>
 
+I developed a web app where you can analyze and play Tactalaris:
+<br><br>
+<a href="https://wingkings.ch">wingkings.ch</a>
+<br><br>
+Links for further research:
+<br><br>
+<a href="https://brainking.com/en/GameRules?tp=2">Corner Chess</a>
+<br><br>
+<a href="https://www.chessvariants.com/rules/chessxp">ChessXp</a>
+<br><br>
 <a href="https://en.wikipedia.org/wiki/Tamerlane_chess">Tamerlane Chess (medieval)</a>
 <br><br>
 <a href="https://www.chessvariants.com/large.dir/wildebeest.html">Wildebeest Chess (1992)</a>
-<br><br>
-<a href="https://www.chessvariants.com/rules/devingt-chess">Modern Kamil (2002)</a>
-<br><br>
-<a href="https://www.chessvariants.com/rules/devingt-chess">Devingt Chess (2005)</a>
 <br><br>
 <a href="https://www.chessvariants.com/tag/Piece:Camel">The camel on chessvariants.com</a>
 <br><br>
@@ -142,9 +142,9 @@ The 3, 2, 1, 1, 1 pawn movement might be a completely new approach.
 
 Game rules, as abstract ideas or methods of organizing human activity, are generally not eligible for copyright protection or patents.* And chess is for the community anyway. So just for clarification:
 
-<br>
+<br><br>
 
-Wing Kings is common heritage of mankind, as chess is. So use it as you want. But I don't complain if you give credit to the author <span style="font-size: 25px">&#128511;</span>.
+Tactalaris is common heritage of mankind, as chess is. So use it as you want. But I don't complain if you give credit to the author <span style="font-size: 25px">&#128511;</span>.
 
 <br><br>
 ------------------------------<br>
